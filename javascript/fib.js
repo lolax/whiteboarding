@@ -14,4 +14,4 @@ const fib = n => {
     return cache
 }
 
-console.log(fib(30))
+console.log(fib(30)) 
