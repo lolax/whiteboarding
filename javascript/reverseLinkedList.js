@@ -1,23 +1,23 @@
 const reverseLinkedList = node => {
-    let curr = node
-    let prev = null
-    let next = null
+  let curr = node
+  let prev = null
+  let next = null
+  
+  while (curr) {
+    next = curr.next
+    curr.next = prev
     
-    while (curr) {
-        next = curr.next
-        curr.next = prev
-        
-        curr = next
-        prev = curr
-    }
-    return prev.value
+    curr = next
+    prev = curr
+  }
+  return prev.value
 }
 
 class ListNode {
-    constructor(value) {
-        this.value = value;
-        this.next = null;
-    }
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
 }
 
 const a = new ListNode('a');
