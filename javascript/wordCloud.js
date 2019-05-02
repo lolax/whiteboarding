@@ -5,6 +5,7 @@ const wordCloud = str => {
     words.forEach(word => {
         wordMap.has(word) ? wordMap.set(word, wordMap.get(word) + 1) : wordMap.set(word, 1)
     })
+    return wordMap
 }
 
 const testString = "HI yes Hello yes yes hi"
