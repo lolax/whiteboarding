@@ -37,3 +37,22 @@ const binarySearch = (target, nums) => {
 
   return false;
 }
+
+const bnrySrch = (target, arr) => {
+  let low = 0
+  let high = arr.length
+  while (low < high) {
+    let mid = Math.floor((high - low) / 2)
+    if (arr[mid] === target) return mid
+    arr[mid] > target ? low = mid : high = mid
+  }
+  return -1
+}
+
+const recBinarySearch = (target, arr, low = 0, high = null) => {
+  if (high === null) high = arr.length
+  if (low >= high) return -1
+  let mid = Math.floor((high - low) / 2)
+  if (arr[mid] === target) return mid
+  arr[mid] > target ? recBinarySearch(target, arr, mid, high) : recBinarySearch(target, arr, low, mid)
+}
