@@ -3,6 +3,8 @@ const getRandom = (floor, ceiling) => {
 }
 
 const inPlaceShuffle = deck => {
+    if (deck.length < 2) return deck
+    
     let randomSpot, cardToSwap
 
     for (let i = 0; i < deck.length; i++) {
