@@ -5,13 +5,11 @@ const fib = n => {
         1: 1
     }
     
-
-    for (i = 2; i < n; i ++) {
+    for (i = 2; i <= n; i ++) {
         cache[i] = cache[i - 1] + cache[i - 2]
-        console.log(cache[i])
     }
     
-    return cache
+    return cache[n]
 }
 
 console.log(fib(30)) 
