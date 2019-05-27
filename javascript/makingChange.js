@@ -17,6 +17,9 @@ const recursiveMakingChange = (amount, denom, index=0, cache={}) => {
     return ways
 }
 
+// O(n ∗ m) time and O(n ∗ m) space
+// where n = amount; m = denominations
+
 const bottomUpMakingChange = (amount, denom) => {
     const ways = new Array(amount + 1).fill(0)
     ways[0] = 1
@@ -29,7 +32,9 @@ const bottomUpMakingChange = (amount, denom) => {
     })
     return ways[amount]
 }
-// if (cache[`${amount}-${coins}`]) return cache[`${amount}-${coins}`]
+
+// O(n ∗ m) time and O(n) space
+// where n = amount; m = denominations
 
 console.log(recursiveMakingChange(5, [1, 5, 10, 25, 50]))
 console.log(bottomUpMakingChange(5, [1, 5, 10, 25, 50]))
