@@ -11,9 +11,17 @@ class Queue {
         this.tail = null
     }
 
-    enqueue(node) {
-        let prevTail = this.tail
-        this.tail = new LinkedListNode(node, prevTail)
+    enqueue(value) {
+        if (!this.tail) {
+            this.tail = new LinkedListNode(value, null)
+        } else {
+            let prevTail = this.tail
+            this.tail = new LinkedListNode(value, null)
+            prevTail.next = this.tail
+            if (!this.head) {
+                this.head = prevTail
+            }
+        }
     }
 
     dequeue() {
